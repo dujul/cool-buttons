@@ -1,0 +1,57 @@
+.neon-button {
+    cursor: pointer;
+    position: relative;
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: hsl(317 100% 54%);
+    background: none;
+    border: #FF14BDFF .1em solid;
+    padding: .25em 1em;
+    border-radius: .25em;
+    text-shadow: 0 0 .25em #FF14BDFF;
+
+    box-shadow: inset 0 0 .5em 0 #FF14BDFF, 0 0 .5em 0 #FF14BDFF;
+    transition: background-color 100ms linear;
+}
+
+.neon-button::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: #FF14BDFF;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    transform: perspective(1em) rotateX(40deg) scale(1, .35);
+    filter: blur(1.25em);
+}
+
+.neon-button::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    box-shadow: 0 0 2.5em .5em #FF14BDFF;
+    opacity: 0;
+    background: #FF14BDFF;
+    z-index: -1;
+    transition: opacity 100ms linear;
+}
+
+.neon-button:hover,
+.neon-button:focus {
+    color: #373e4f;
+    text-shadow: none;
+}
+
+
+.neon-button:hover::before,
+.neon-button:focus::before {
+    opacity: 1;
+}
+
+.neon-button:hover::after,
+.neon-button:focus::after {
+    opacity: 1;
+}

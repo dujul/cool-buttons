@@ -1,0 +1,69 @@
+.directional-button {
+    position: relative;
+    cursor: pointer;
+    color: #d2d2d7;
+    font-size: 1.5rem;
+    padding: .75em 2em;
+    background: #149639;
+    border: .1em solid #0e7a2d;
+    border-radius: 100vw;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.directional-button:hover, .directional-button:focus-visible {
+    background: #25a14a;
+}
+
+.directional-button > span {
+    position: absolute;
+    background: transparent;
+    width: 33.33333%;
+    height: 100%;
+    z-index: -1;
+    opacity: .5;
+}
+
+.directional-button > :first-child {
+    left: 0;
+    top: 0;
+}
+
+.directional-button > :last-child {
+    right: 0;
+    top: 0;
+}
+
+.directional-button::before {
+    content: "";
+    position: absolute;
+    background: #0f5431;
+    width: 10%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    inset: 0;
+    margin: auto;
+    z-index: -1;
+    opacity: 0;
+
+    transition: transform 100ms 200ms, opacity 200ms;
+}
+
+.directional-button:active::before {
+    transform: scale(20);
+    opacity: 1;
+    transition: transform 1000ms, opacity 500ms;
+}
+
+.directional-button:has(:first-child:active)::before {
+    margin-left: 0;
+}
+
+.directional-button:has(:last-child:active)::before {
+    margin-right: 0;
+}
+
+.directional-button:has(:first-child:active)::before,
+.directional-button:has(:last-child:active)::before {
+    transition: transform 750ms, opacity 250ms;
+}

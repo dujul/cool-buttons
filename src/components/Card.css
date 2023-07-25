@@ -1,0 +1,33 @@
+.card-list {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    border: #15213d 1px solid;
+    box-shadow: 5px 5px 15px 5px #263048;
+    padding: 50px 5% 100px;
+    background-color: #263048;
+    z-index: 1;
+    width: 20%;
+    margin: 10px;
+}
+
+.desc {
+    margin-top: 10%;
+    font-style: italic;
+}
+
+.category {
+
+}
+
+.category-title {
+    font-size: large;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    margin-bottom: 2.5rem;
+}

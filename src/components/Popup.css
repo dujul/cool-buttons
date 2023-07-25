@@ -1,0 +1,33 @@
+.popup-background {
+    position: absolute;
+    inset: 0;
+    background: rgba(21, 33, 61, 0.5);
+    opacity: 0;
+    z-index: 1000;
+    user-select: none;
+    pointer-events: none;
+    transition: opacity 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-background-click {
+    position: absolute;
+    inset: 0;
+}
+
+.popup-background.shown {
+    pointer-events: all;
+    user-select: all;
+    opacity: 1;
+}
+
+.popup-frame {
+    padding: 1rem;
+    color: #15213d;
+    background: white;
+    position: relative;
+    z-index: 1001;
+    user-select: none;
+}
